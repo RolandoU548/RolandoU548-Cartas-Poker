@@ -47,10 +47,11 @@ body{
 
 .carta{
     background: white;
-    width: 190px;
+    min-width: 200px;
     height: 16rem;
     border-radius: 10px;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     margin: 40px;
@@ -80,18 +81,18 @@ body{
 }
 
 .carta::before, .carta::after{
-    position: relative;
+    position: absolute;
     font-size: 80px;
 }
 
 .carta::before{
-    bottom: 90px;
-    right: 5px;
+    top: -10px;
+    left: 15px;
 }
 
 .carta::after{
-    top: 90px;
-    left: 5px;
+    bottom: -10px;
+    right: 15px;
     transform: rotate(180deg);
 }
 
