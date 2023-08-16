@@ -19,7 +19,7 @@ body{
 }
 
 #input:focus {
-    box-shadow: 0 0 15px rgb(0, 40, 0);
+    box-shadow: 0 0 20px rgb(0, 40, 0);
 }
 
 .divConBotones {
@@ -32,14 +32,16 @@ body{
     border-radius: 5px;
     width: 150px;
     height: 50px;
+    font-weight: bold;
+    font-size: 15px;
     background-color: rgb(221, 255, 231);
     margin: 30px;
     transition: all 0.5s;
 }
 
 #boton:hover{
-    background-color: rgb(34, 207, 86);
-    box-shadow: 0 0 20px rgb(10, 60, 25);
+    background-color: rgb(23, 145, 59);
+    box-shadow: 0 0 50px rgb(2, 16, 6);
 }
 
 .carta{
@@ -92,7 +94,7 @@ body{
     transform: rotate(180deg);
 }
 
-.carta:hover, .carta:focus{
+.carta:hover, .focus{
     box-shadow: 0px 0px 30px rgb(255, 0, 0);
     transform: translateY(-15px);
 }

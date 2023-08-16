@@ -12,10 +12,13 @@ var todasCartas = [];
 
 for (let pinta of pintasCarta){
     for (let valor of valoresCarta){
-        
+        let carta = {
+            valor : valor,
+            pinta : pinta,
+        }
+        todasCartas.push(carta)
     }
 }
-
 
 function inputLleno(){
     const entrada = document.querySelector("#input");
@@ -32,46 +35,45 @@ function añadirCarta (){
     const contenedorPrincipal = document.querySelector(".container");
     const fragmento = document.createDocumentFragment();
 
-    for (let i = 0; i <cantidadCartas; i++){
-        fragmento.appendChild(crearCarta(generarValor(), generarpinta()));
+    const cartas = obtenerCartasAleatorias(todasCartas, cantidadCartas)
+
+    for (let carta of cartas){
+        fragmento.appendChild(crearCarta(carta.valor, carta.pinta));
     }
 
     let boton = contenedorPrincipal.lastElementChild;
     contenedorPrincipal.innerHTML = "";
     contenedorPrincipal.appendChild(fragmento);
     contenedorPrincipal.appendChild(boton);
-}
-
-function generarpinta() {
-    let pintasCarta = ["diamante", "corazon", "pica", "trebol"];
-    let pintaAleatoria = Math.floor(Math.random() * pintasCarta.length);
-    return pintasCarta[pintaAleatoria];
-}
-
-function generarValor() {
-    let valoresCarta = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
-    let valorAleatorio = Math.floor(Math.random() * valoresCarta.length);
-    return valoresCarta[valorAleatorio];
+    
+    const cartasFocus = document.querySelectorAll(".carta");
+    for (const cartaFocus of cartasFocus){
+        cartaFocus.addEventListener("click", añadirFocus);
+    }
 }
 
 function crearCarta(valor, pinta){
-    carta = document.createElement("div");
+    let carta = document.createElement("div");
     carta.innerHTML = valor;
     carta.classList.add("carta");
     carta.classList.add(pinta);
-    carta.setAttribute("tabIndex", 1);
     return carta;
 }
 
-function obtenerCartasAleatorias(array, elementos) {
-    var copiaArray = array.slice();
-    var elementosSeleccionados = [];
+function obtenerCartasAleatorias(array, cantidad) {
+    let copiaArray = array.slice();
+    let cartasSeleccionadas = [];
 
-    for (var i = 0; i < elementos; i++) {
-        var indiceAleatorio = Math.floor(Math.random() * copiaArray.length);
-        var elemento = copiaArray.splice(indiceAleatorio, 1)[0]; // Extrae el elemento correspondiente al índice aleatorio de la copia del array
-        elementosSeleccionados.push(elemento);
+    for (let i = 0; i < cantidad; i++) {
+        let indiceAleatorio = Math.floor(Math.random() * copiaArray.length);
+        let carta = copiaArray.splice(indiceAleatorio, 1)[0];
+        cartasSeleccionadas.push(carta);
     }
 
-    return elementosSeleccionados;
+    return cartasSeleccionadas;
+}
+
+function añadirFocus(){
+    const cartaFocus = event.target;
+    cartaFocus.classList.toggle("focus");
 }
