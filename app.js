@@ -23,8 +23,8 @@ for (let pinta of pintasCarta){
 function inputLleno(){
     const entrada = document.querySelector("#input");
     const boton = document.querySelector(".divConBotones");
-    cantidadCartas = entrada.value;
     if (entrada.value != ''){
+        cantidadCartas = entrada.value;
         entrada.style.display= "none";
         boton.style.display= "flex";
         añadirCarta();
@@ -75,5 +75,9 @@ function obtenerCartasAleatorias(array, cantidad) {
 
 function añadirFocus(){
     const cartaFocus = event.target;
-    cartaFocus.classList.toggle("focus");
+    if (cartaFocus.classList.contains("trebol") || cartaFocus.classList.contains("pica")){
+        cartaFocus.classList.toggle("focusNegro");
+    } else {
+        cartaFocus.classList.toggle("focusRojo");
+    }
 }
