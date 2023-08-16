@@ -1,0 +1,98 @@
+body{
+    background-color: rgb(17, 82, 53);
+}
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    background-color: rgb(17, 82, 53);
+}
+
+#input{
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#input:focus {
+    box-shadow: 0 0 15px rgb(0, 40, 0);
+}
+
+.divConBotones {
+    width: 100%;
+    display: none;
+    justify-content: center;
+}
+
+#boton{
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(221, 255, 231);
+    margin: 30px;
+    transition: all 0.5s;
+}
+
+#boton:hover{
+    background-color: rgb(34, 207, 86);
+    box-shadow: 0 0 20px rgb(10, 60, 25);
+}
+
+.carta{
+    background: white;
+    width: 190px;
+    height: 16rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    font-size: 80px;
+    font-family: 'Cardo', serif;
+    transition: all 0.5s;
+}
+
+.carta.pica::before, .carta.pica::after{
+    content: "♠";
+}
+
+.carta.trebol::before, .carta.trebol::after{
+    content: "♣";
+}
+
+.carta.diamante::before, .carta.diamante::after{
+    content: "♦";
+}
+
+.carta.corazon::before, .carta.corazon::after{
+    content: "♥";
+}
+
+.carta.corazon,.carta.diamante{
+    color: rgb(255, 0, 0);
+}
+
+.carta::before, .carta::after{
+    position: relative;
+    font-size: 80px;
+}
+
+.carta::before{
+    bottom: 90px;
+    right: 5px;
+}
+
+.carta::after{
+    top: 90px;
+    left: 5px;
+    transform: rotate(180deg);
+}
+
+.carta:hover, .carta:focus{
+    box-shadow: 0px 0px 30px rgb(255, 0, 0);
+    transform: translateY(-15px);
+}
