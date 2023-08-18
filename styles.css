@@ -58,6 +58,7 @@ body{
     font-size: 80px;
     font-family: 'Cardo', serif;
     transition: all 0.5s;
+    box-shadow: 20px 20px 20px 5px black;
 }
 
 .carta.pica::before, .carta.pica::after{
