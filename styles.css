@@ -16,10 +16,11 @@ body{
     width: 250px;
     height: 30px;
     font-size: 20px;
+    transition: all 0.5s;
 }
 
 #input:focus {
-    box-shadow: 0 0 20px rgb(0, 40, 0);
+    box-shadow: 0 0 60px 5px rgb(0, 40, 0);
 }
 
 .divConBotones {
@@ -41,7 +42,7 @@ body{
 
 #boton:hover{
     background-color: rgb(23, 145, 59);
-    box-shadow: 0 0 50px rgb(2, 16, 6);
+    box-shadow: 0 0 40px 5px rgb(176, 207, 185);
     font-size: 18px;
 }
 

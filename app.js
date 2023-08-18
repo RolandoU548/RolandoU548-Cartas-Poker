@@ -26,7 +26,7 @@ function inputLleno(){
     if (entrada.value != ''){
         cantidadCartas = entrada.value;
         boton.style.display= "flex";
-        setInterval(añadirCarta, 5 * 1000)
+        setInterval(añadirCarta, 10 * 1000)
         añadirCarta();
     }
 }
