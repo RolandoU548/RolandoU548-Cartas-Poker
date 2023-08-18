@@ -58,7 +58,7 @@ body{
     font-size: 80px;
     font-family: 'Cardo', serif;
     transition: all 0.5s;
-    box-shadow: 20px 20px 20px 5px black;
+    box-shadow: 20px 20px 15px 5px black;
 }
 
 .carta.pica::before, .carta.pica::after{
@@ -103,6 +103,6 @@ body{
 }
 
 .trebol:hover, .pica:hover, .focusNegro{
-    box-shadow: 0 0 50px rgb(0, 0, 0);
+    box-shadow: 0 0 30px 10px rgb(0, 0, 0);
     transform: translateY(-15px);
 }
