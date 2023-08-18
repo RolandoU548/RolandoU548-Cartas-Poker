@@ -7,7 +7,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 97vh;
     background-color: rgb(17, 82, 53);
 }
 
@@ -99,6 +99,10 @@ body{
     transform: rotate(180deg);
 }
 
+.focusNegro{
+    transform: rotate(360deg);
+}
+
 .diamante:hover, .corazon:hover, .focusRojo{
     box-shadow: 0 0 30px rgb(255, 0, 0);
     transform: translateY(-15px);
@@ -108,3 +112,4 @@ body{
     box-shadow: 0 0 30px 10px rgb(0, 0, 0);
     transform: translateY(-15px);
 }
+
